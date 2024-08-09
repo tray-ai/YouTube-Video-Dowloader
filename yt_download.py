@@ -89,8 +89,14 @@ def main():
     """Main part of the program which calls get_youtube_video
     function with a URL. """
 
-    url = 'https://www.youtube.com/watch?v=rEq1Z0bjdwc'
-    get_youtube_video(url)
+    while True:
+
+        url = input('Enter URL: ').strip()
+        
+        if url.lower() == 'q':
+            break
+        else:
+            get_youtube_video(url)
 
 if __name__ == '__main__':
     main()
