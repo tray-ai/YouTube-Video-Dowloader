@@ -88,7 +88,7 @@ def main():
     """Main part of the program which calls get_youtube_video
     function with a URL. """
 
-    url = 'https://www.youtube.com/watch?v=NsHz2_ghT40'
+    url = 'https://www.youtube.com/watch?v=rEq1Z0bjdwc'
     get_youtube_video(url)
 
 if __name__ == '__main__':
