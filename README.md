@@ -32,7 +32,8 @@ Feel free to modify the main() function to test with different YouTube URLs.
 Installation
 You can install the required dependencies using pip.
 
-```pip install ffmpeg-python pytubefix```
+```pip install ffmpeg-python``` or
+```python3 -m pip install ffmpeg-python```
 
 Ensure that FFmpeg is installed on your system. You can download it from FFmpeg's official website.
  
