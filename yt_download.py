@@ -24,8 +24,8 @@ def get_youtube_video(url):
 
     try:
         yt = YouTube(url, on_progress_callback=on_progress)
-    except pytubefix.exceptions.VideoUnavailable as e:
-        print(e)
+    except pytubefix.exceptions.VideoUnavailable:
+        print('Video is unavailable.')
 
     # Initiate audio/video stream file names.
     video_file = f'{yt.title}_video.mp4'
