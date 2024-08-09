@@ -27,11 +27,15 @@ def get_youtube_video(url):
     except pytubefix.exceptions.VideoUnavailable as e:
         print(e)
 
+    # Initiate audio/video stream file names.
+    video_file = f'{yt.title}_video.mp4'
+    audio_file = f'{yt.title}_audio.mp4'
+
     # Select the first video stream with 1080p resolution and download it.
     video = yt.streams.filter(resolution='1080p', adaptive=True).first()
     if video:
         print('Downloading Video...')
-        video.download(filename=f'{yt.title}_video.mp4')
+        video.download(filename = video_file)
     else:
         print('No video stream found.')
 
@@ -39,12 +43,9 @@ def get_youtube_video(url):
     audio = yt.streams.filter(only_audio=True, adaptive=True).first()
     if audio:
         print('Downloading Audio...')
-        audio.download(filename=f'{yt.title}_audio.mp4')
+        audio.download(filename = audio_file)
     else:
         print('No audio stream found.')
-
-    video_file = f'{yt.title}_video.mp4'
-    audio_file = f'{yt.title}_audio.mp4'
 
     merge_video_audio(yt, video_file, audio_file)
 
